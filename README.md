@@ -1,1 +1,1 @@
-Naive Bayes Classifier implementation
+Naive Bayes Classifier implementation for numerical values
