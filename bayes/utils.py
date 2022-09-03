@@ -48,8 +48,6 @@ def label_feature_split_back(train, test, class_pos):
     Y_train = []
     X_test = []
     Y_test = []
-
-
     for i in range(len(train)):
         Y_train.append(train[i][class_pos-1])
         X_train.append(train[i][:class_pos-1])
@@ -66,8 +64,6 @@ def label_feature_split_front(train, test, class_pos):
     Y_train = []
     X_test = []
     Y_test = []
-
-
     for i in range(len(train)):
         Y_train.append(train[i][class_pos-1])
         X_train.append(train[i][class_pos:])
