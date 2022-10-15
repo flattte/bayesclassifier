@@ -1,7 +1,6 @@
 from csv import reader
 import random
 
-
 ###### UTILS WILL HAVE TO MOVE FROM HERE
 def split_data(data, split):
     random.seed(a=None)
@@ -13,7 +12,6 @@ def split_data(data, split):
         data.pop(random_index)
     return [train, data]
 
-
 def load_csv(filename):
     dataset = list()
     with open(filename, 'r') as file:
@@ -24,12 +22,10 @@ def load_csv(filename):
             dataset.append(row)
     return dataset
 
-
 # Convert string column to float
 def	s_to_float(dataset, column):
 	for row in dataset:
 		row[column] = float(row[column].strip())
-
 
 # Convert string column to integer
 def s_to_int(dataset, column):
@@ -41,7 +37,6 @@ def s_to_int(dataset, column):
 	for row in dataset:
 		row[column] = lookup[row[column]]
 	return lookup
-
 
 def label_feature_split_back(train, test, class_pos):
     X_train = []
@@ -57,8 +52,6 @@ def label_feature_split_back(train, test, class_pos):
         X_test.append(test[i][:class_pos-1])
     return X_train, X_test, Y_train, Y_test
 
-
-
 def label_feature_split_front(train, test, class_pos):
     X_train = []
     Y_train = []
@@ -72,7 +65,3 @@ def label_feature_split_front(train, test, class_pos):
         Y_test.append(test[i][class_pos-1])
         X_test.append(test[i][class_pos:])
     return X_train, X_test, Y_train, Y_test
-
-
-
-
