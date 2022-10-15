@@ -7,8 +7,6 @@ class NaiveBayes:
             import warnings
         warnings.simplefilter("ignore")
         
-
-
     def predict(self, X):
         self.maps_detail, leading_probs = [] , []
         for row in X:
@@ -38,8 +36,6 @@ class NaiveBayes:
                 correct += 1 
         return correct / len(Y_test)
 
-
-
     #fitting the bayes model
     def fit(self, X, Y):
         sep =  self._separate_by_class(X, Y)
@@ -51,16 +47,12 @@ class NaiveBayes:
             }
         return self.class_summary
 
-
-
     #propabilities of getting x from gaussian distribution
     def _probsGD(self, x, mean, stddev):
         coef = (stddev*(np.sqrt(2*np.pi)))
         exponent = np.exp(-((x-mean)**2 / (2*stddev**2)))
         return exponent / coef
-
     
-
     #yields stats for a feature columnn 
     def data_summary(self, X): 
             for feature in zip(*X): 
@@ -68,8 +60,6 @@ class NaiveBayes:
                 'std' : self._std_dev(feature),
                 'mean' : self._mean(feature)
                 } 
-
-
 
     #X - features, Y - labels, returns  dictionary with classes and each feature matrix of that class
     def _separate_by_class(self, X, Y): 
@@ -82,8 +72,6 @@ class NaiveBayes:
             sep[class_id].append(features)
             #print(sep) #tool to view some raw data being processed
         return sep
-
-
 
     #Standard deviation
     @staticmethod
