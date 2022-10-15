@@ -13,9 +13,7 @@ except ImportError:
     print("Failed importing modules")
     exit()
 
-
-
-
+    
 def np_implementation_iris(): #LEARNS
     data = utils.load_csv(ph.path("iris.csv").path)
     for column in range(4):
@@ -44,7 +42,6 @@ def np_implementation_iris(): #LEARNS
     plt.show()
 
 
-
 def np_implementation_wine(): #LEARNS 
     data = load_csv('../dataset/wine.data')
     for i in range(len(data)):
@@ -70,7 +67,6 @@ def np_implementation_wine(): #LEARNS
                 [12.96,3.45,2.35,18.5,106,1.39,.7,.4,.94,5.28,.68,1.75,675]]
     pred = model.predict(classify)
     print(pred)
-
 
 def glass_implementation():   #LEARNS
     data = load_csv("../dataset/glass.csv")
@@ -106,7 +102,6 @@ def glass_implementation():   #LEARNS
     plt.show()
 
 
-
 #job stats dataset
 def job_implementation(): #NEEDS WORK
     path = ph.path("../dataset/jobdescription.csv")
@@ -122,7 +117,6 @@ def job_implementation(): #NEEDS WORK
     df['occupation'].replace('?', np.NaN, inplace=True)
     df['native_country'].replace('?', np.NaN, inplace=True)
     #todo
-
 
 if __name__ == '__main__':
     #np_implementation_wine()
