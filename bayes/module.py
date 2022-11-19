@@ -15,9 +15,7 @@ class NaiveBayes:
                 likelihood = 0.0 #probality of feature given the class
                 for i in range(len(features['summary'])):
                     feature = row[i]
-                    normal_proba = self._probsGD(
-                        feature, features['summary'][i]['mean'], features['summary'][i]['std']
-                        )
+                    normal_proba = self._probsGD(feature, features['summary'][i]['mean'], features['summary'][i]['std'])
                     likelihood += np.log(normal_proba) # + is there because of log of product of probs * => + (irs just faster and more accurate)
                 prior = features['prior'] #prob of a class being there on avarege
                 probs[class_name] = prior + likelihood 
@@ -57,8 +55,8 @@ class NaiveBayes:
     def data_summary(self, X): 
             for feature in zip(*X): 
                 yield {
-                'std' : self._std_dev(feature),
-                'mean' : self._mean(feature)
+                    'std' : self._std_dev(feature),
+                    'mean' : self._mean(feature)
                 } 
 
     #X - features, Y - labels, returns  dictionary with classes and each feature matrix of that class
